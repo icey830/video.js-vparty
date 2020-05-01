@@ -1,0 +1,105 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>videojs-overlay Demo</title>
+  <link href="node_modules/video.js/dist/video-js.css" rel="stylesheet">
+  <link href="dist/videojs-overlay.css" rel="stylesheet">
+</head>
+<body>
+  <video id="videojs-overlay-player" class="video-js vjs-default-skin" controls>
+    <source src="http://cdn.img.elvns.com/uploads/20190712/lsOXSJsFqmz4Ko6PQ4nMEX60rtcK.mp4" type='video/mp4'>
+    <source src="//vjs.zencdn.net/v/oceans.webm" type='video/webm'>
+  </video>
+  <ul>
+    <li><a href="test/debug.html">Run unit tests in browser.</a></li>
+  </ul>
+  <script src="node_modules/video.js/dist/video.js"></script>
+  <script src="dist/videojs-overlay.js"></script>
+  <script>
+    (function(window, videojs) {
+      var player = window.player = videojs('videojs-overlay-player');
+      player.vparty({
+        header: '互动精灵-VIDEOJS',
+        content: 'Default overlay content',
+        debug: true,
+        overlays: [{
+          start: 5,
+          end: 15,
+          content: 'haha!',
+          align: 'bottom',
+          type:'text',
+          showImages:true,
+          ask: true,
+          list:[
+            {
+              order:1,
+              title: 'title oen',
+              res: 10,
+              image: 'http://cdn.img.elvns.com/uploads/20190712/lsOXSJsFqmz4Ko6PQ4nMEX60rtcK.mp4?vframe/jpg/offset/1'
+            },{
+              order:2,
+              title: 'title two',
+              res: 12,
+              image: 'http://cdn.img.elvns.com/uploads/20190712/lsOXSJsFqmz4Ko6PQ4nMEX60rtcK.mp4?vframe/jpg/offset/5',
+              target: '_self' // defaults to self if no target value is present
+            },{
+              order:3,
+              title: 'title three',
+              res: 18,
+              image: 'http://cdn.img.elvns.com/uploads/20190712/lsOXSJsFqmz4Ko6PQ4nMEX60rtcK.mp4?vframe/jpg/offset/20',
+              target: '_self' // defaults to self if no target value is present
+            },{
+              order:4,
+              title: 'title four',
+              content: 'Default overlay content',
+              res: 600,
+              target: '_self' // defaults to self if no target value is present
+            }
+          ]
+
+        }, {
+          start: 15,
+          end: 20,
+          content: 'hehe!',
+          showImages: false,
+          type:'image',
+          list:[
+            {
+              order:1,
+              title: 'title oen',
+              res: 10
+
+            },{
+              order:2,
+              title: 'title two',
+              res: 62
+
+            },{
+              order:3,
+              title: 'title three',
+              res: 18
+            },{
+              order:4,
+              title: 'title four',
+              content: 'Default overlay content',
+              res: 600
+            }
+          ]
+        }, {
+          start: 25,
+          end: 30,
+          align: 'bottom'
+        }, {
+          start: 35,
+          end: 45,
+          align: 'bottom-right'
+        }, {
+          start: 20,
+          end: 'pause'
+        }]
+      });
+    }(window, window.videojs));
+  </script>
+</body>
+</html>

@@ -1,0 +1,207 @@
+.video-js {
+  $bottom: 3.5em;
+  $nudge: 5px;
+  $middle: 50%;
+  $offset-h: -16.5%;
+  $offset-v: -15px;
+
+  .vjs-overShow {
+    background: rgba(0, 0, 0, .7);
+    height: 95%;
+    left: 0;
+    overflow: hidden;
+    padding: 20px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100%;
+  }
+
+  .vjs-overShow-no-background {
+    max-width: 33%;
+  }
+
+  .vjs-overShow-background {
+    // IE8
+    background-color: #646464;
+    background-color: rgba(255, 255, 255, 0.4);
+    border-radius: round($nudge / 2);
+    padding: $nudge * 2;
+    width: 33%;
+  }
+
+  .vjs-overShow-top-left {
+    top: $nudge;
+    left: $nudge;
+  }
+
+  .vjs-overShow-top {
+    left: $middle;
+    margin-left: $offset-h;
+    top: $nudge;
+  }
+
+  .vjs-overShow-top-right {
+    right: $nudge;
+    top: $nudge;
+  }
+
+  .vjs-overShow-right {
+    right: $nudge;
+    top: $middle;
+    transform: translateY(-50%);
+  }
+
+  .vjs-overShow-bottom-right {
+    bottom: $bottom;
+    right: $nudge;
+  }
+
+  .vjs-overShow-bottom {
+    bottom: $bottom;
+    left: $middle;
+    margin-left: $offset-h;
+  }
+
+  .vjs-overShow-bottom-left {
+    bottom: $bottom;
+    left: $nudge;
+  }
+
+  .vjs-overShow-left {
+    left: $nudge;
+    top: $middle;
+    transform: translateY(-50%);
+  }
+
+  .vjs-overShow-center {
+    left: $middle;
+    margin-left: $offset-h;
+    top: $middle;
+    transform: translateY(-50%);
+  }
+
+  // Fallback for IE8 and IE9
+  .vjs-no-flex .vjs-overShow-left,
+  .vjs-no-flex .vjs-overShow-center,
+  .vjs-no-flex .vjs-overShow-right {
+    margin-top: $offset-v;
+  }
+
+  .vjs-overShow.is-active {
+    display: block;
+  }
+
+  .vjs-overShow-container {
+    -webkit-align-content: center;
+    align-content: center;
+    -webkit-align-items: baseline;
+    align-items: baseline;
+    display: -webkit-flex;
+    display: -ms-flex;
+    display: flex;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-justify-content: center;
+    justify-content: center;
+    padding-left: 10%;
+    padding-right: 10%;
+    position: absolute;
+    bottom: 8px;
+    background-color: rgba(85, 85, 85, 0.31);
+  }
+
+  .vjs-text-container {
+    width: 100%;
+    left: 0;
+    right: 0;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    align-items: center;
+  }
+
+  .vjs-overShow-header {
+    font: 700 16px/1 Arial, sans-serif;
+    margin: 0 auto 20px;
+    text-align: center;
+  }
+
+  .vjs-overShow-text-link {
+    font: 400 18px/1 Arial, sans-serif;
+    margin-top: 3%;
+    margin-bottom: 20px;
+    margin-right: 20px;
+    margin-left: 20px;
+    position: relative;
+    /* width: 30%;  */
+    text-align: center;
+
+  }
+  .vjs-overShow-text-link:nth-of-type(4n),
+  .vjs-overShow-text-link:last-of-type {
+    margin-right: 20px;
+  }
+  .vjs-overShow-link {
+    font: 400 18px/1 Arial, sans-serif;
+    margin-top: 3%;
+    margin-bottom: 20px;
+    margin-right: 20px;
+
+    position: relative;
+    width: 20%;
+    text-align: center;
+
+  }
+  .vjs-overShow-link:nth-of-type(4n),
+  .vjs-endovershow-link:last-of-type {
+    margin-right: 0;
+  }
+  .vjs-overShow-img {
+    height: auto;
+    margin-bottom: 5px;
+    width: 100%;
+    border-radius: 10px;
+  }
+  .vjs-overShow-span {
+    margin-left: 10px;
+    color: #fff;
+    margin-top: 3px;
+
+  }
+
+  .vjs-overShow-btn {
+    border: 2px solid #a1a1a1;
+    padding: 20px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    text-decoration: none;
+    overflow: hidden;
+    cursor: pointer;
+  }
+
+  .vjs-overShow-btn:after {
+    content: "";
+    background: #90EE90;
+    display: block;
+    position: absolute;
+    padding-top: 100%;
+    padding-left: 50%;
+    margin-left: -20px!important;
+    margin-top: -120%;
+    opacity: 0;
+    transition: all 0.8s
+  }
+
+  .vjs-overShow-btn:active:after {
+    padding: 0;
+    margin: 0;
+    opacity: 1;
+    transition: 0s
+  }
+}
+
