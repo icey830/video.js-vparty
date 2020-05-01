@@ -6,7 +6,7 @@
 
 [![NPM](https://nodei.co/npm/videojs-overlay.png?downloads=true&downloadRank=true)](https://nodei.co/npm/videojs-overlay/)
 
-A plugin to display simple overlays - similar to YouTube's "Annotations" feature in appearance - during video playback.
+A plugin to display simple overshows - similar to YouTube's "Annotations" feature in appearance - during video playback.
 
 _Note_: This meaning of an "overlay" is distinct from that of a modal dialog, which can overlay the entire player. This is built into video.js as [the `ModalDialog` component](http://docs.videojs.com/docs/api/modal-dialog.html).
 
